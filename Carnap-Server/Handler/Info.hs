@@ -9,8 +9,8 @@ getInfoR = do
     defaultLayout $ do
         addScript $ StaticR js_popper_min_js
         addScript $ StaticR ghcjs_rts_js
-        addScript $ StaticR ghcjs_allactions_lib_js
-        addScript $ StaticR ghcjs_allactions_out_js
+        --addScript $ StaticR ghcjs_allactions_lib_js
+        --addScript $ StaticR ghcjs_allactions_out_js
         addScript $ StaticR klement_proofs_js
         addScript $ StaticR klement_syntax_js
         setTitle "Carnap - About"
@@ -19,7 +19,7 @@ getInfoR = do
         addStylesheet $ StaticR css_exercises_css
         addStylesheet $ StaticR klement_proofs_css
         -- TODO : split out the stuff specifically relating to exercises
-        addScript $ StaticR ghcjs_allactions_runmain_js
+        -- addScript $ StaticR ghcjs_allactions_runmain_js
 
 -- TODO remove submit option on these.
 proofcheck :: Int -> Text -> Text -> Text -> Text -> HtmlUrl url
