@@ -9,3 +9,8 @@ packages:
 - Carnap-Client/
 #resolver: lts-6.25
 resolver: lts-6.30
+
+#Needed in order to use stack with nix in development
+nix:
+  enable: true
+  packages: [glpk, pcre, zlib, postgresql]

@@ -3,7 +3,7 @@ module Foundation where
 import Database.Persist.Sql        (ConnectionPool, runSqlPool)
 import Import.NoFoundation
 import Text.Hamlet                 (hamletFile)
-import SecureStrings               (googleApiKey, googleSecret)
+-- import SecureStrings               (googleApiKey, googleSecret)
 import Yesod.Auth.GoogleEmail2 as GE (authGoogleEmail, forwardUrl)
 import Yesod.Auth.Dummy            (authDummy)
 import qualified Yesod.Core.Unsafe as Unsafe
@@ -272,7 +272,7 @@ instance YesodAuth App where
     -- otherwise
     authPlugins app = if appDevel (appSettings app) 
                           then [authDummy]
-                          else [authGoogleEmail googleApiKey googleSecret]
+                          else [authDummy] -- Ishaq TODO: get SecureStrings [authGoogleEmail googleApiKey googleSecret]
 
     authHttpManager = getHttpManager
 
